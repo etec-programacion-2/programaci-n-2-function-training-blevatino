@@ -69,12 +69,15 @@ fun esAprobado(nota: Double): Boolean {
 // Etapa 2
 fun calcularPromedioTresNotas(nota1: Double, nota2: Double, nota3: Double): Double {
     // Implementar aquí
-    return 0.0
+    return ((nota1+nota2+nota3)/3)
 }
 
 fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String {
     // Implementar aquí
-    return ""
+    if (nota >= 6){
+        return "El alumno $nombre $apellido está aprobado"
+    }
+    return "El alumno $nombre $apellido está desaprobado"
 }
 
 // Etapa 3
