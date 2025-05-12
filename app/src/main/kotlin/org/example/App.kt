@@ -43,7 +43,7 @@ fun main() {
     println(boletin)
 
     // TODO: Implementar funciones de análisis de rendimiento
-    println("Estadísticas del curso:")
+    println("\nEstadísticas del curso:")
     println("Promedio: ${calcularPromedioCurso(notas)}")
     println("Nota más alta: ${obtenerNotaMasAlta(notas)}")
     println("Nota más baja: ${obtenerNotaMasBaja(notas)}")
@@ -108,20 +108,32 @@ fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<St
 // Etapa 4
 fun generarBoletin(nombre: String, materias: List<String>, notas: List<Double>): String {
     // Implementar aquí
-    return ""
+    var boletin: String = "Alumno: $nombre"
+    var cant: Int = 0
+    for (i in materias){
+        boletin += "\n$i: ${notas[cant]}"
+        cant += 1
+    }
+    return boletin
 }
 
 fun obtenerNotaMasAlta(notas: List<Double>): Double {
     // Implementar aquí
-    return 0.0
+    return notas.max()
 }
 
 fun obtenerNotaMasBaja(notas: List<Double>): Double {
     // Implementar aquí
-    return 0.0
+    return notas.min()
 }
 
 fun contarAprobados(notas: List<Double>): Int {
     // Implementar aquí
-    return 0
+    var cant: Int = 0
+    for (i in notas){
+        if (i >= 6){
+            cant += 1
+        }
+    }
+    return cant
 }
